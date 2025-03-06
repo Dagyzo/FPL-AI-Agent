@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPL AI Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>FPL AI Recommendations</h1>
+
+    <h2>🔥 Captain Picks</h2>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Form</th>
+        </tr>
+        {% for player in captain %}
+        <tr>
+            <td>{{ player.first_name }}</td>
+            <td>{{ player.second_name }}</td>
+            <td>{{ player.form }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>📈 Transfer Recommendations</h2>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Team</th>
+            <th>Form</th>
+        </tr>
+        {% for player in transfers %}
+        <tr>
+            <td>{{ player.first_name }}</td>
+            <td>{{ player.second_name }}</td>
+            <td>{{ player.team }}</td>
+            <td>{{ player.form }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>⚠️ Injury Alerts</h2>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Team</th>
+            <th>Status</th>
+        </tr>
+        {% for player in injuries %}
+        <tr>
+            <td>{{ player.first_name }}</td>
+            <td>{{ player.second_name }}</td>
+            <td>{{ player.team }}</td>
+            <td style="color: red;">{{ player.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
+
